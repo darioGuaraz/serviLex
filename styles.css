@@ -1,0 +1,364 @@
+/*
+  ServiLex Moto Encomiendas - styles.css
+  Colores institucionales, mobile first, animaciones livianas, accesibilidad y performance.
+*/
+:root {
+  --color-bg: rgb(38, 42, 54);
+  --color-text: rgb(122, 200, 242);
+  --color-accent: rgb(195, 42, 8);
+  --font-main: montserrat, Arial, sans-serif;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: var(--font-main);
+  background: var(--color-bg);
+  color: var(--color-text);
+  min-height: 100vh;
+  line-height: 1.6;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: var(--color-bg);
+  border-bottom: 1px solid rgba(92, 240, 253, 0.1);
+}
+.logo {
+  height: 48px;
+  width: auto;
+}
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+.nav a {
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+.nav a:hover {
+  color: var(--color-accent);
+}
+.hero {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 3rem 1rem 2rem 1rem;
+  animation: fadeIn 1.2s ease;
+  background-image: url(./assets/imagenHeader.png);
+  object-fit: contain;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: #eafcff;
+  min-height: 70vh;
+}
+.hero h1 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  color: var(--color-text);
+  letter-spacing: 1px;
+  font-weight: 200;
+  text-shadow: #0f0f0f 0 1px 2px;
+}
+.hero p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: #eafcff;
+}
+
+.whatsapp-btn {
+  background: var(--color-accent);
+  color: #fff;
+  padding: 0.9em 2em;
+  border-radius: 32px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(195, 42, 8, 0.15);
+  transition: background 0.2s, transform 0.2s;
+  margin-top: 1rem;
+}
+.whatsapp-btn:hover {
+  background: #fff;
+  color: var(--color-accent);
+  transform: scale(1.05);
+}
+.about {
+  padding-inline: 10%;
+  text-align: center;
+}
+.container-about-txt {
+  display: block;
+}
+.container-about-img {
+  display: none;
+  width: 30%;
+}
+
+.servicios {
+  padding: 2.5rem 1rem 2rem 1rem;
+  background: var(--color-bg);
+}
+.servicios h2 {
+  text-align: center;
+  font-size: 2 rem;
+  margin-bottom: 2rem;
+  color: var(--color-accent);
+}
+.servicios-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.servicio {
+  background: rgba(92, 240, 253, 0.07);
+  border-radius: 18px;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  box-shadow: 0 2px 12px rgba(11, 19, 40, 0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(30px);
+}
+.servicio h3 {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+  color: var(--color-text);
+}
+.servicio:hover {
+  transform: scale(1.03) !important;
+  box-shadow: 0 4px 24px rgba(122, 200, 242, 0.445) !important;
+  background: rgb(6, 66, 99);
+}
+/*
+#servicio-grid-1 {
+  background-image: url(./assets/servicio-grid-1.png) !important  ;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+#servicio-grid-2 {
+  background-image: url(./assets/servicio-grid-2.png) !important  ;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+#servicio-grid-3 {
+  background-image: url(./assets/servicio-grid-3.png) !important  ;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+#servicio-grid-4 {
+  background-image: url(./assets/servicio-grid-4.png) !important  ;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+#servicio-grid-5 {
+  background-image: url(./assets/servicio-grid-5.png) !important  ;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+#servicio-grid-6 {
+  background-image: url(./assets/servicio-grid-6.png) !important  ;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+#servicio-grid-7 {
+  background-image: url(./assets/logo.png) !important  ;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  grid-column: 1 / -1;
+  margin-top: 1.5rem;
+}*/
+
+.icon {
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  margin-bottom: 0.5rem;
+}
+.icon-document {
+  background: url('data:image/svg+xml;utf8,<svg fill="%2392f0fd" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><rect x="8" y="8" width="32" height="32" rx="6" fill="%2392f0fd"/><rect x="14" y="14" width="20" height="4" fill="%230b1328"/><rect x="14" y="22" width="20" height="4" fill="%230b1328"/><rect x="14" y="30" width="12" height="4" fill="%230b1328"/></svg>')
+    no-repeat center/contain;
+}
+.icon-tramite {
+  background: url('data:image/svg+xml;utf8,<svg fill="%2392f0fd" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="20" fill="%2392f0fd"/><rect x="18" y="18" width="12" height="12" fill="%230b1328"/></svg>')
+    no-repeat center/contain;
+}
+.icon-mensajeria {
+  background: url('data:image/svg+xml;utf8,<svg fill="%2392f0fd" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><ellipse cx="24" cy="24" rx="20" ry="14" fill="%2392f0fd"/><rect x="14" y="20" width="20" height="8" fill="%230b1328"/></svg>')
+    no-repeat center/contain;
+}
+.icon-coordinacion {
+  background: url('data:image/svg+xml;utf8,<svg fill="%2392f0fd" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="10" width="28" height="28" rx="8" fill="%2392f0fd"/><circle cx="24" cy="24" r="8" fill="%230b1328"/></svg>')
+    no-repeat center/contain;
+}
+.icon-embalaje {
+  background: url('data:image/svg+xml;utf8,<svg fill="%2392f0fd" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><rect x="12" y="12" width="24" height="24" rx="6" fill="%2392f0fd"/><rect x="18" y="18" width="12" height="12" fill="%230b1328"/></svg>')
+    no-repeat center/contain;
+}
+.icon-penitenciario {
+  background: url('data:image/svg+xml;utf8,<svg fill="%2392f0fd" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><rect x="8" y="8" width="32" height="32" rx="6" fill="%2392f0fd"/><rect x="16" y="16" width="16" height="16" fill="%230b1328"/></svg>')
+    no-repeat center/contain;
+}
+.icon-mas {
+  background: url('data:image/svg+xml;utf8,<svg fill="%2392f0fd" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><circle cx="24" cy="24" r="20" fill="%2392f0fd"/><text x="24" y="30" font-size="24" text-anchor="middle" fill="%230b1328">...</text></svg>')
+    no-repeat center/contain;
+}
+.contacto {
+  padding: 2rem 1rem;
+  text-align: center;
+  background: var(--color-bg);
+}
+.contacto h2 {
+  color: var(--color-text);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+.contacto p {
+  color: #eafcff;
+  margin-bottom: 1.5rem;
+}
+.footer {
+  width: 100%;
+  text-align: end;
+}
+.footer p {
+  display: none;
+}
+
+.footer img {
+  width: 100%;
+
+  height: auto;
+  max-width: 1200px;
+
+  margin: 0 auto;
+  display: block;
+}
+
+h2 {
+  color: var(--color-accent);
+}
+
+@media (min-width: 600px) {
+  .servicios-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  #servicio-grid-7 {
+    grid-column: 1 / -1;
+  }
+  .hero h1 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    color: var(--color-text);
+    letter-spacing: 1px;
+    font-weight: 200;
+    font-size: 70px;
+  }
+  .about p {
+    font-size: 25px;
+    padding: 0px t;
+  }
+}
+@media (min-width: 900px) {
+  .servicios-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  #servicio-grid-7 {
+    grid-column: 1 / -1;
+  }
+  .hero h1 {
+    font-size: 2.8rem;
+  }
+  .p-hero {
+    background-color: rgba(26, 27, 27, 0.404);
+    border-radius: 50px;
+    width: auto;
+    padding: 15px;
+  }
+  .about {
+    margin-top: 50px;
+    padding-inline: 15%;
+    text-align: center;
+    display: flex;
+    gap: 40px;
+  }
+  .container-about-txt {
+    display: block;
+
+    width: 60%;
+  }
+
+  .container-about-txt h2 {
+    text-align: end;
+  }
+  .container-about-txt p {
+    font-size: 20px;
+    padding: 0px 10px;
+    text-align: end;
+  }
+
+  .container-about-img {
+    width: 20%;
+    text-align: end;
+
+    display: block;
+  }
+  .container-about-img img {
+    height: 35vh;
+  }
+
+  .footer {
+    text-align: center;
+    padding: 1.2rem 1rem;
+    background: var(--color-bg);
+    color: #eafcff;
+    font-size: 0.95rem;
+    border-top: 1px solid rgba(92, 240, 253, 0.1);
+  }
+  .footer p {
+    display: block;
+    padding: 1.2rem 1rem;
+  }
+  .footer img {
+    display: none;
+  }
+}
+/* Animaciones */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.fade-in {
+  animation: fadeIn 1.2s ease forwards;
+}

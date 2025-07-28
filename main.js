@@ -3,24 +3,29 @@
 
 // Módulo para animar servicios al hacer scroll
 const fadeInOnScroll = (() => {
-  // Selecciona todos los elementos con la clase 'fade-in'
-  const fadeEls = document.querySelectorAll(".fade-in");
+  const servicios = document.querySelectorAll(".servicio");
 
-  // Función para mostrar el elemento si está en viewport
-  const showOnScroll = () => {
-    fadeEls.forEach((el) => {
-      const rect = el.getBoundingClientRect();
-      if (rect.top < window.innerHeight - 60) {
-        el.style.opacity = 1;
-        el.style.transform = "translateY(0)";
-      }
-    });
-  };
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          // Agrega un retraso escalonado para cada servicio
+          setTimeout(() => {
+            entry.target.classList.add("visible");
+          }, index * 200); // 200ms de retraso entre cada servicio
+        } else {
+          entry.target.classList.remove("visible");
+        }
+      });
+    },
+    {
+      threshold: 0.1, // Cuando al menos 10% del elemento es visible
+      rootMargin: "0px 0px -50px 0px", // Trigger un poco antes
+    }
+  );
 
-  // Escucha el evento scroll y ejecuta la función
-  window.addEventListener("scroll", showOnScroll);
-  // Ejecuta al cargar la página
-  showOnScroll();
+  // Observa cada servicio
+  servicios.forEach((servicio) => observer.observe(servicio));
 })();
 
 // Módulo para microinteracciones en botones
